@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  buttonmonitor:
+    image: ${DOCKER_REGISTRY-}buttonmonitor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      BUTTON: "10"
+      TIME_OUT: "3000"
+      URI: "http://localhost:8000/api/StavkeRacuna/insertRacunFiskal"
